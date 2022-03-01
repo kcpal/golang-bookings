@@ -74,3 +74,9 @@ func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
 
 	render.RenderTemplate(w, "reservation.page.tmpl", &models.TemplateData{})
 }
+
+// MakeReservation is the handler for the MakeReservation page
+func (m *Repository) MakeReservation(w http.ResponseWriter, r *http.Request) {
+
+	render.RenderTemplate(w, "make-reservation.page.tmpl", &models.TemplateData{})
+}
