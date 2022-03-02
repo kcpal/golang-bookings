@@ -69,10 +69,15 @@ func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "contact.page.tmpl", &models.TemplateData{})
 }
 
-// Reservation is the handler for the Reservation page
-func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
+// Availability is the handler for the Reservation page
+func (m *Repository) Availability(w http.ResponseWriter, r *http.Request) {
 
-	render.RenderTemplate(w, "reservation.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, "search-availability.page.tmpl", &models.TemplateData{})
+}
+
+// PostAvailability is the handler for the Reservation page
+func (m *Repository) PostAvailability(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Posted to search availability"))
 }
 
 // MakeReservation is the handler for the MakeReservation page
