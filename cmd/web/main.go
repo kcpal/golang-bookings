@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/kcpal/bookings/pkg/config"
-	"github.com/kcpal/bookings/pkg/handlers"
-	"github.com/kcpal/bookings/pkg/render"
+	"github.com/kcpal/bookings/internal/config"
+	"github.com/kcpal/bookings/internal/handlers"
+	"github.com/kcpal/bookings/internal/render"
 
 	"github.com/alexedwards/scs/v2"
 )
@@ -29,7 +29,7 @@ func main() {
 	session.Cookie.SameSite = http.SameSiteLaxMode
 	session.Cookie.Secure = app.InProduction // Should be true in production
 
-	app.Sesson = session
+	app.Session = session
 
 	tc, err := render.CreateTemplateCache()
 	if err != nil {
